@@ -1,0 +1,21 @@
+h1 Authorization is required.
+
+span This application will be able to:
+ul
+  - @req.scopes.each do |scope|
+    li=scope
+.actions
+  = form_tag '/authorize', method: :post do |f|
+    = hidden_field_tag :client_id, @req.client_id
+    = hidden_field_tag :redirect_uri, @req.redirect_uri
+    = hidden_field_tag :state, @req.state
+    = hidden_field_tag :response_type, @req.response_type
+    = hidden_field_tag :scope, @req.scope
+    = hidden_field_tag :nonce, @req.nonce
+    .name
+      span name
+      input name='name'
+    .pass
+      span pass
+      input name='pass'
+    = submit_tag 'Authorize'

@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @client.name
+p
+  strong Client:
+  = @client.client_id
+p
+  strong Client secret:
+  = @client.client_secret
+p
+  strong Redirect uri:
+  = @client.redirect_uri
+
+= link_to 'Edit', edit_client_path(@client)
+'|
+= link_to 'Back', clients_path

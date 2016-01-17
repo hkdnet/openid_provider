@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root 'clients#index'
+  resources :clients
+  get 'authorize', controller: 'authorize', action: 'new'
+  post 'authorize', controller: 'authorize', action: 'create'
+
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

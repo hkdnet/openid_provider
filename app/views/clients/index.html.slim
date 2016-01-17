@@ -1,0 +1,27 @@
+h1 Listing clients
+
+table
+  thead
+    tr
+      th Name
+      th Client
+      th Client secret
+      th Redirect uri
+      th
+      th
+      th
+
+  tbody
+    - @clients.each do |client|
+      tr
+        td = client.name
+        td = client.client_id
+        td = client.client_secret
+        td = client.redirect_uri
+        td = link_to 'Show', client
+        td = link_to 'Edit', edit_client_path(client)
+        td = link_to 'Destroy', client, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Client', new_client_path
