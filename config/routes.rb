@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :clients
   get 'authorize', controller: 'authorize', action: 'new'
   post 'authorize', controller: 'authorize', action: 'create'
+  get 'userinfo', controller: 'user_info', action: 'index'
+  post 'userinfo', controller: 'user_info', action: 'index'
 
   resources :users
 
